@@ -41,6 +41,9 @@ public class Empresa {
 	@Column(name = "TX_ENDERECO")
 	private String tx_endereco;
 	
+	@Column(name= "tx_avatar")
+	private String tx_avatar;
+	
 	@Column(name = "email_contato")
 	private String email_contato;
 	
