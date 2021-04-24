@@ -12,7 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import br.com.etechoracio.minojob.enums.estadosEnum;
+import br.com.etechoracio.minojob.enums.EstadosEnum;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -44,7 +44,7 @@ public class Vaga {
 	
 	@Enumerated(EnumType.STRING)
 	@Column(name = "UF")
-	public estadosEnum uf;
+	public EstadosEnum uf;
 	
 	@Column(name = "pais")
 	public String pais;

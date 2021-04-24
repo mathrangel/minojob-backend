@@ -37,7 +37,7 @@ public class VagaController {
 	}
 	
 	//working
-	@PostMapping
+	@PostMapping("/admin/create")
 	public ResponseEntity<Vaga> create(@RequestBody Vaga body) {
 		Optional<Empresa>empresa= empresaRepository.findById(body.getEmpresa().getId());
 		

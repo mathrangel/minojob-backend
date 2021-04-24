@@ -1,6 +1,6 @@
 package br.com.etechoracio.minojob.enums;
 
-public enum estadosEnum {
+public enum EstadosEnum {
 	AC,
 	AL,
 	AP,

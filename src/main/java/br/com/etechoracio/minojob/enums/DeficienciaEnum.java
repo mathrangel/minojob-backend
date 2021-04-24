@@ -1,6 +1,6 @@
 package br.com.etechoracio.minojob.enums;
 
-public enum deficienciaEnum {
+public enum DeficienciaEnum {
 
 	//DEFICIÊNCIA AUDITIVA
 	deficiencia_auditiva_LEVE,
@@ -33,3 +33,5 @@ public enum deficienciaEnum {
 	deficiencia_visual_PROFUNDO
 	
 }
+
+

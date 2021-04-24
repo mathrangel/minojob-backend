@@ -20,11 +20,11 @@ public class Empresa {
 	@Column(name = "id")
 	private Integer id;
 	
-	@Column(name = "TX_NOME")
-	private String tx_nome;
+	@Column(name = "NOME")
+	private String nome;
 	
-	@Column(name = "TX_EMAIL")
-	private String tx_email;
+	@Column(name = "EMAIL")
+	private String email;
 	
 	@Column(name = "TX_SENHA")
 	private String tx_senha;
@@ -46,5 +46,6 @@ public class Empresa {
 	
 	@Column(name = "email_contato")
 	private String email_contato;
+	
 	
 }
