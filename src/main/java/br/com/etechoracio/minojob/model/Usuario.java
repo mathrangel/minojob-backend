@@ -24,12 +24,17 @@ import org.springframework.security.core.userdetails.UserDetails;
 import br.com.etechoracio.minojob.enums.DeficienciaEnum;
 import br.com.etechoracio.minojob.enums.EstadosEnum;
 import br.com.etechoracio.minojob.enums.PerfilEnum;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 
 @Builder
 @Getter
+@AllArgsConstructor
+@NoArgsConstructor
 @Setter
 @Entity
 @Table(name = "TB_PCD")
