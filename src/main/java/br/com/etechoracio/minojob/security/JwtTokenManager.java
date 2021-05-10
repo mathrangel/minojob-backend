@@ -1,6 +1,7 @@
 package br.com.etechoracio.minojob.security;
 
 import java.time.Duration;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -34,7 +35,7 @@ public class JwtTokenManager {
 		return Jwts.builder().setIssuer("Caelum Eats")
 							 .setSubject(Long.toString(user.getId()))
 							 .claim("username", user.getEmail())
-							 .claim("roles", List.of(user.getPerfil().name()))
+							 .claim("roles", Arrays.asList(user.getPerfil().name()))
 							 .setIssuedAt(now)
 							 .setExpiration(expiration)
 							 .signWith(SignatureAlgorithm.HS512, this.secret).compact();

@@ -2,6 +2,7 @@ package br.com.etechoracio.minojob.model;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
@@ -131,6 +132,6 @@ public class Usuario implements UserDetails{
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return List.of(Perfil.builder().authority(perfil.name()).build());
+		return Arrays.asList(Perfil.builder().authority(perfil.name()).build());
 	}
 }
