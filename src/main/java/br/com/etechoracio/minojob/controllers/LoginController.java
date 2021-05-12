@@ -32,7 +32,10 @@ public class LoginController {
 		Authentication authentication = authManager.authenticate(authenticationToken);
 		Usuario user = (Usuario) authentication.getPrincipal();
 		String jwt = jwtTokenManager.generateToken(user);
-		return ResponseEntity.ok(TokenResponseDTO.builder().token(jwt).build());
+		return ResponseEntity.ok(TokenResponseDTO.builder()
+				.id(user.id)
+				.token(jwt)
+				.build());
 	}
 
 }
