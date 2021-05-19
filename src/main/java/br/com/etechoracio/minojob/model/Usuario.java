@@ -21,6 +21,7 @@ import javax.persistence.Transient;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import br.com.etechoracio.minojob.enums.DeficienciaEnum;
 import br.com.etechoracio.minojob.enums.EstadosEnum;
@@ -51,7 +52,7 @@ public class Usuario implements UserDetails{
 	public String nome;
 	
 	@Column(name = "NASCIMENTO")
-	public Timestamp nascimento;
+	public String nascimento;
 	
 	@Enumerated(EnumType.STRING)
 	@Column(name = "TX_DEFICIENCIA")
