@@ -28,7 +28,7 @@ public class Vaga {
 	public Integer id;
 	
 	@Column(name = "TX_NOME")
-	public String tx_nome;
+	public String nome;
 	
 	@Column(name = "TX_AREA_INTERESSE")
 	public String tx_area_interesse;
@@ -54,6 +54,8 @@ public class Vaga {
 	
 	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "EMPRESA_ID")
-	public Empresa empresa;
+	public Usuario empresa;
+
+
 	
 }
