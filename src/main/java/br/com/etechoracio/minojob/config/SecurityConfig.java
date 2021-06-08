@@ -3,6 +3,7 @@ package br.com.etechoracio.minojob.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.BeanIds;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -32,13 +33,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("/login/**").permitAll().antMatchers("/admin/**")
-				.hasRole(PerfilEnum.EMPRESA.name()).anyRequest().authenticated().and().cors().and().csrf().disable()
+		http.authorizeRequests()
+				.antMatchers(HttpMethod.POST, "/usuario").permitAll()
+				.antMatchers("/login/**").permitAll()
+		
+				.antMatchers("/admin/**").hasRole(PerfilEnum.EMPRESA.name())
+				.anyRequest().authenticated().and().cors().and().csrf().disable()
 				.formLogin().disable().httpBasic().disable().sessionManagement()
 				.sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
 				.addFilterBefore(this.jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
-	}
 
+	}
+	
+	
+	
 	@Override
 	protected void configure(final AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(this.userService).passwordEncoder(this.passwordEncoder);
